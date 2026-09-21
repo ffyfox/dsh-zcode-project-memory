@@ -1,0 +1,14 @@
+# dsh-project-memory 的 profile 补丁层。
+#
+# 本层只插入一行：项目长效记忆宿主插件。它在任何挂了 tools 与 system-prompt
+# 服务的 profile 里激活：
+#   1. 注册模型可调用的 save_project_memory 工具，写入当前项目的记忆文件；
+#   2. 在每次 system prompt 组装时，把该项目的记忆注入系统上下文。
+#
+# 该行 inject 了 tools / systemPrompt 两个宿主服务 —— 它们由 dsh-base 提供，
+# 因此 web、headless、tui 等任何继承 dsh-base 的 profile 都能生效；缺少这两个
+# 服务的部署里这一行停留在 PENDING，不产生副作用。
+
+- insert:
+    - id: project-memory
+      name: dsh-project-memory

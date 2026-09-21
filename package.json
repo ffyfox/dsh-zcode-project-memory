@@ -1,0 +1,62 @@
+{
+  "name": "dsh-project-memory",
+  "version": "0.1.0",
+  "description": "Project-scoped long-term memory for DeepSeek Harness: a save_project_memory tool plus automatic recall of project memory into the system prompt.",
+  "type": "module",
+  "license": "MIT AND Apache-2.0",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "LICENSE-APACHE-2.0",
+    "NOTICE.md",
+    "NOTICE-ZCode.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffyfox/dsh-project-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ffyfox/dsh-project-memory/issues"
+  },
+  "homepage": "https://github.com/ffyfox/dsh-project-memory#readme",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/injection.mjs && node test/config.mjs && node test/roundtrip.mjs && node test/isolation.mjs && node test/robustness.mjs && node test/subsystem-manifest.mjs && node test/subsystem-extraction.mjs && node test/subsystem-summarization.mjs && node test/packaging.mjs",
+    "test:subsystems": "node test/subsystem-manifest.mjs && node test/subsystem-extraction.mjs && node test/subsystem-summarization.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "memory",
+    "long-term-memory",
+    "project-memory"
+  ]
+}

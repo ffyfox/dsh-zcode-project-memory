@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# 同一分支上的新推送取消仍在跑的旧任务。
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # package.json 的 engines 声明为 >=20，这里覆盖声明的下限与当前 LTS。
+        node: ['20', '22']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      # 用 ci 而非 install：锁定 package-lock.json，且不隐式改写它。
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify packaging
+        run: npm pack --dry-run
+
+  markdown-links:
+    name: README link targets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 只做一件事：README 里指向仓库内文件的相对链接必须真实存在。
+      # 不引入额外的 lint 依赖，避免为了检查而扩大依赖面。
+      #
+      # 围栏代码块内的内容不是链接（README 的「记忆文件形态」一节里就有示意性的
+      # `](auth-token-refresh-gotcha.md)`），因此先剥掉 ``` 围栏再匹配。
+      - name: Verify relative links in READMEs resolve
+        run: node -e '
+          const { readFileSync, existsSync } = require("node:fs");
+          const { dirname, resolve } = require("node:path");
+          const stripFences = (text) => text.replace(/^```[\s\S]*?^```$/gm, "");
+          let bad = 0;
+          for (const readme of ["README.md", "README.en.md"]) {
+            const text = stripFences(readFileSync(readme, "utf8"));
+            for (const m of text.matchAll(/\]\((?!https?:|#)([^)#]+)/g)) {
+              const target = resolve(dirname(readme), m[1]);
+              if (!existsSync(target)) { console.error(`${readme}: 失效链接 ${m[1]}`); bad++; }
+            }
+          }
+          process.exit(bad === 0 ? 0 : 1);
+          '
