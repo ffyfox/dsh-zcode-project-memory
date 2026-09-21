@@ -1,5 +1,5 @@
 {
-  "name": "dsh-project-memory",
+  "name": "@ffyfox/dsh-project-memory",
   "version": "0.1.0",
   "description": "Project-scoped long-term memory for DeepSeek Harness: a save_project_memory tool plus automatic recall of project memory into the system prompt.",
   "type": "module",
@@ -7,13 +7,17 @@
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./src/subsystems/manifest.js": "./src/subsystems/manifest.js",
+    "./src/subsystems/extraction.js": "./src/subsystems/extraction.js",
+    "./src/subsystems/summarization.js": "./src/subsystems/summarization.js"
   },
   "files": [
     "src",
     "cordis.patch.yml",
     "README.md",
     "README.en.md",
+    "CHANGELOG.md",
     "LICENSE",
     "LICENSE-APACHE-2.0",
     "NOTICE.md",
@@ -27,7 +31,9 @@
     "url": "https://github.com/ffyfox/dsh-project-memory/issues"
   },
   "homepage": "https://github.com/ffyfox/dsh-project-memory#readme",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20"
   },

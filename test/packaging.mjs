@@ -30,6 +30,7 @@ const ALLOWED_TOP_LEVEL = new Set([
   'package.json',
   'README.md',
   'README.en.md',
+  'CHANGELOG.md',
   'LICENSE',
   'LICENSE-APACHE-2.0',
   'NOTICE.md',
@@ -67,7 +68,7 @@ const manifest = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'))
 // ---- 1. 打包清单 -----------------------------------------------------------
 check('files 白名单只列出允许发布的内容', () => {
   const files = manifest.files ?? []
-  const allowedPrefixes = ['src', 'cordis.patch.yml', 'README', 'LICENSE', 'NOTICE']
+  const allowedPrefixes = ['src', 'cordis.patch.yml', 'README', 'CHANGELOG', 'LICENSE', 'NOTICE']
   const offenders = files.filter(
     (entry) => !allowedPrefixes.some((prefix) => entry.startsWith(prefix)),
   )

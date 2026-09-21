@@ -18,10 +18,15 @@
 
 - `.gitignore`：除 `node_modules/` 与 `*.tgz` 外，补上构建产物、覆盖率、日志、本地配置与密钥、编辑器与操作系统文件的忽略规则。
 - `README.md` / `README.en.md`：修正测试项数量（131 → 实测 129）；补充构建与测试、贡献、变更日志、行为准则的入口。
+- **包名改为 `@ffyfox/dsh-project-memory`**：npm 上的非 scoped 名 `dsh-project-memory` 已被他人占用（同名但无关的项目，2026-08-16 发布），scoped 名可用。`cordis.patch.yml` 的插件行、`package.json` 的 `name` 与 `exports`、`package-lock.json` 及文档中的安装/导入示例同步更新。GitHub 仓库名保持不变。
+- 可发布：移除 `private`，新增 `publishConfig.access = "public"`，并把 `CHANGELOG.md` 加入 `files` 白名单。
 
 ### Fixed
 
 - 修正 README 中与实际测试输出不符的检查项数量。
+- 修正文档化的子系统导入路径：`exports` 此前只映射 `.` 与 `./package.json`，README 给出的
+  `'@ffyfox/dsh-project-memory/src/subsystems/*.js'` 会报 `ERR_PACKAGE_PATH_NOT_EXPORTED`。
+  现为三个子系统补上对应的 `exports` 子路径，文档示例从装好的包里可真实执行。
 
 ## [0.1.0] - 2026-09-22
 

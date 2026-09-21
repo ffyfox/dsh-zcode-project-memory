@@ -1,4 +1,4 @@
-# dsh-project-memory
+# @ffyfox/dsh-project-memory
 
 English | [中文](README.md)
 
@@ -185,7 +185,7 @@ They are **not** started automatically by `apply()` — the plugin's runtime beh
 | background summarization | `runMemoryAgentLoop({model, tools, executeTool, …})`, `evaluateMemoryAgentToolPolicy(input)` | Summary text + turn count + tool-call trace |
 
 ```js
-import { scanMemoryManifest, formatMemoryManifest } from 'dsh-project-memory/src/subsystems/manifest.js'
+import { scanMemoryManifest, formatMemoryManifest } from '@ffyfox/dsh-project-memory/src/subsystems/manifest.js'
 
 const manifest = await scanMemoryManifest({ rootDir: memoryRoot })
 console.log(formatMemoryManifest(manifest))

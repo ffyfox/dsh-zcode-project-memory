@@ -1,4 +1,4 @@
-# dsh-project-memory
+# @ffyfox/dsh-project-memory
 
 [English](README.en.md) | 中文
 
@@ -185,7 +185,7 @@ src/index.js            Cordis 插件入口：工具注册 + 两处注入
 | 后台总结 | `runMemoryAgentLoop({model, tools, executeTool, …})`、`evaluateMemoryAgentToolPolicy(input)` | 总结文本 + 轮次 + 工具调用轨迹 |
 
 ```js
-import { scanMemoryManifest, formatMemoryManifest } from 'dsh-project-memory/src/subsystems/manifest.js'
+import { scanMemoryManifest, formatMemoryManifest } from '@ffyfox/dsh-project-memory/src/subsystems/manifest.js'
 
 const manifest = await scanMemoryManifest({ rootDir: memoryRoot })
 console.log(formatMemoryManifest(manifest))
