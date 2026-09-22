@@ -271,7 +271,7 @@ dsh --profile headless "这个项目的长效记忆里说了什么？引用索�
 
 ## 贡献
 
-开发环境、测试与提交约定见 [`CONTRIBUTING.md`](CONTRIBUTING.md)；参与本项目请遵守 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)。
+欢迎提交 Issue 与 Pull Request。
 
 变更记录见 [`CHANGELOG.md`](CHANGELOG.md)。
 

@@ -271,7 +271,7 @@ The conformance report is at [`docs/conformance-report.md`](docs/conformance-rep
 
 ## Contributing
 
-Development environment, testing, and commit conventions are in [`CONTRIBUTING.md`](CONTRIBUTING.md); participation is governed by [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+Issues and pull requests are welcome.
 
 Release history is in [`CHANGELOG.md`](CHANGELOG.md).
 

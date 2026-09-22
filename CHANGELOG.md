@@ -9,16 +9,19 @@
 
 ### Added
 
-- `CONTRIBUTING.md`：开发环境、测试与提交约定。
-- `CODE_OF_CONDUCT.md`：Contributor Covenant 2.1。
 - `.github/workflows/ci.yml`：在 Node 20 / 22 上执行 `npm ci`、`npm test` 与 `npm pack --dry-run`。
 - `CHANGELOG.md`：本文件。
+
+### Removed
+
+- `CONTRIBUTING.md` 与 `CODE_OF_CONDUCT.md`：不再随项目提供，README 中对应的指引段落一并删除，
+  改为一句「欢迎提交 Issue 与 Pull Request」。
 
 ### Changed
 
 - `.gitignore`：除 `node_modules/` 与 `*.tgz` 外，补上构建产物、覆盖率、日志、本地配置与密钥、编辑器与操作系统文件的忽略规则。
-- `README.md` / `README.en.md`：修正测试项数量（131 → 实测 129）；补充构建与测试、贡献、变更日志、行为准则的入口。
-- **包名改为 `@ffyfox/dsh-project-memory`**：npm 上的非 scoped 名 `dsh-project-memory` 已被他人占用（同名但无关的项目，2026-08-16 发布），scoped 名可用。`cordis.patch.yml` 的插件行、`package.json` 的 `name` 与 `exports`、`package-lock.json` 及文档中的安装/导入示例同步更新。GitHub 仓库名保持不变。
+- `README.md` / `README.en.md`：修正测试项数量（131 → 实测 129）；补充构建与测试、贡献与变更日志的入口。
+- **包名改为 `@ffyfox/dsh-project-memory`**：npm 上的非 scoped 名 `dsh-project-memory` 已被他人占用（同名但无关的项目，2026-08-16 发布），scoped 名可用。`cordis.patch.yml` 的插件行、`package.json` 的 `name` 与 `exports`、`package-lock.json` 及文档中的安装/导入示例同步更新。
 - 可发布：移除 `private`，新增 `publishConfig.access = "public"`，并把 `CHANGELOG.md` 加入 `files` 白名单。
 
 - **包名改为 `dsh-zcode-project-memory`**：把实现来源写进名字，同时避免与非 scoped 名 `dsh-project-memory` 重名。
