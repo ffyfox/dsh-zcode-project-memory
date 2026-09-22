@@ -31,9 +31,6 @@
     "url": "https://github.com/ffyfox/dsh-zcode-project-memory/issues"
   },
   "homepage": "https://github.com/ffyfox/dsh-zcode-project-memory#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "engines": {
     "node": ">=20"
   },

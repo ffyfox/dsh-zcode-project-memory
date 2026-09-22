@@ -16,13 +16,17 @@
 
 - `CONTRIBUTING.md` 与 `CODE_OF_CONDUCT.md`：不再随项目提供，README 中对应的指引段落一并删除，
   改为一句「欢迎提交 Issue 与 Pull Request」。
+- `package.json` 的 `publishConfig.access`：该字段只在 scoped 包上有意义（scoped 包默认 restricted）；
+  包名改为非 scoped 的 `dsh-zcode-project-memory` 后它已不起作用，故移除。
 
 ### Changed
 
 - `.gitignore`：除 `node_modules/` 与 `*.tgz` 外，补上构建产物、覆盖率、日志、本地配置与密钥、编辑器与操作系统文件的忽略规则。
 - `README.md` / `README.en.md`：修正测试项数量（131 → 实测 129）；补充构建与测试、贡献与变更日志的入口。
 - **包名改为 `@ffyfox/dsh-project-memory`**：npm 上的非 scoped 名 `dsh-project-memory` 已被他人占用（同名但无关的项目，2026-08-16 发布），scoped 名可用。`cordis.patch.yml` 的插件行、`package.json` 的 `name` 与 `exports`、`package-lock.json` 及文档中的安装/导入示例同步更新。
-- 可发布：移除 `private`，新增 `publishConfig.access = "public"`，并把 `CHANGELOG.md` 加入 `files` 白名单。
+- 可发布：移除 `private`，并把 `CHANGELOG.md` 加入 `files` 白名单。
+- CI：`actions/checkout` 与 `actions/setup-node` 升到 `@v7`（`using: node24`），消除每个 run 上的
+  「Node.js 20 is deprecated」注解。此前先升到 `@v5`，`@v7` 是目前最新版。
 
 - **包名改为 `dsh-zcode-project-memory`**：把实现来源写进名字，同时避免与非 scoped 名 `dsh-project-memory` 重名。
   `package.json` 的 `name`/`description`/`keywords`、`cordis.patch.yml` 的插件行、`package-lock.json`
