@@ -23,6 +23,18 @@ the tool-policy denial messages, and `MEMORY_INDEX_LINE_LIMIT` / `MEMORY_INDEX_C
 A copy of the Apache License, Version 2.0 is provided in [`LICENSE-APACHE-2.0`](LICENSE-APACHE-2.0).
 The upstream `NOTICE` content is reproduced in [`NOTICE-ZCode.md`](NOTICE-ZCode.md).
 
+### Trademarks
+
+Apache License 2.0 §6 grants no permission to use the Licensor's trade names,
+trademarks, service marks, or product names, **except as required for reasonable
+and customary use in describing the origin of the Work**.
+
+This project's package name (`dsh-zcode-project-memory`) and documentation use
+"ZCode" solely to describe that origin, as permitted by §6. This project is an
+**unofficial community work**: it is not affiliated with, authorized,
+sponsored, or endorsed by Z.AI Co., Ltd. "ZCode" and "DeepSeek Harness" are the
+trademarks of their respective owners.
+
 ## Other dependencies
 
 This project depends on `@deepseek-ai/schemastery` (MIT) at runtime.

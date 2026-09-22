@@ -1,4 +1,4 @@
-# @ffyfox/dsh-project-memory 的 profile 补丁层。
+# dsh-zcode-project-memory 的 profile 补丁层。
 #
 # 本层只插入一行：项目长效记忆宿主插件。它在任何挂了 tools 与 system-prompt
 # 服务的 profile 里激活：
@@ -11,4 +11,4 @@
 
 - insert:
     - id: project-memory
-      name: @ffyfox/dsh-project-memory
+      name: dsh-zcode-project-memory

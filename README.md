@@ -1,4 +1,4 @@
-# @ffyfox/dsh-project-memory
+# dsh-zcode-project-memory
 
 [English](README.en.md) | 中文
 
@@ -13,6 +13,8 @@ DeepSeek Harness 的项目级长效记忆插件。模型在一次会话里沉淀
 记忆按**项目维度隔离**：目录名由项目根目录的规范绝对路径经 sha256 派生，同一项目在任何进程、任何会话里命中同一份记忆，不同项目互不可见。
 
 机制以 [zai-org/ZCode](https://github.com/zai-org/ZCode) 的实现为准复刻，DSH 侧接口以 [DeepSeek Harness 官方文档](https://deepseek-harness.github.io/deepseek-harness/)为准。
+
+> **非官方项目。** 本项目是社区作品，与 Z.AI Co., Ltd（ZCode 的开发者）及 DeepSeek 均无隶属关系，**未获其授权、赞助或背书**。包名中的 `zcode` 仅用于说明实现来源（见上文与 [`NOTICE.md`](NOTICE.md)）。"ZCode" 是其各自权利人的商标，本项目对该名称的使用仅为描述来源。
 
 ## 安装
 
@@ -185,7 +187,7 @@ src/index.js            Cordis 插件入口：工具注册 + 两处注入
 | 后台总结 | `runMemoryAgentLoop({model, tools, executeTool, …})`、`evaluateMemoryAgentToolPolicy(input)` | 总结文本 + 轮次 + 工具调用轨迹 |
 
 ```js
-import { scanMemoryManifest, formatMemoryManifest } from '@ffyfox/dsh-project-memory/src/subsystems/manifest.js'
+import { scanMemoryManifest, formatMemoryManifest } from 'dsh-zcode-project-memory/src/subsystems/manifest.js'
 
 const manifest = await scanMemoryManifest({ rootDir: memoryRoot })
 console.log(formatMemoryManifest(manifest))

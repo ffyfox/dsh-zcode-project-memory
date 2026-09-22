@@ -1,7 +1,7 @@
 {
-  "name": "@ffyfox/dsh-project-memory",
+  "name": "dsh-zcode-project-memory",
   "version": "0.1.0",
-  "description": "Project-scoped long-term memory for DeepSeek Harness: a save_project_memory tool plus automatic recall of project memory into the system prompt.",
+  "description": "Unofficial community port of ZCode's project memory to DeepSeek Harness: project-scoped long-term memory with a save_project_memory tool plus automatic recall of project memory into the system prompt.",
   "type": "module",
   "license": "MIT AND Apache-2.0",
   "main": "src/index.js",
@@ -63,6 +63,7 @@
     "dsh-plugin",
     "memory",
     "long-term-memory",
-    "project-memory"
+    "project-memory",
+    "zcode"
   ]
 }

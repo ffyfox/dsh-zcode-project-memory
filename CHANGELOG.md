@@ -21,6 +21,14 @@
 - **包名改为 `@ffyfox/dsh-project-memory`**：npm 上的非 scoped 名 `dsh-project-memory` 已被他人占用（同名但无关的项目，2026-08-16 发布），scoped 名可用。`cordis.patch.yml` 的插件行、`package.json` 的 `name` 与 `exports`、`package-lock.json` 及文档中的安装/导入示例同步更新。GitHub 仓库名保持不变。
 - 可发布：移除 `private`，新增 `publishConfig.access = "public"`，并把 `CHANGELOG.md` 加入 `files` 白名单。
 
+- **包名改为 `dsh-zcode-project-memory`**：把实现来源写进名字，同时避免与非 scoped 名 `dsh-project-memory` 重名。
+  `package.json` 的 `name`/`description`/`keywords`、`cordis.patch.yml` 的插件行、`package-lock.json`
+  与文档中的安装和导入示例同步更新。GitHub 仓库名保持不变。
+- `description` 改为说明「Unofficial community port of ZCode's project memory to DeepSeek Harness」；
+  `keywords` 增加 `zcode`。
+- 依据 Apache-2.0 §6（Trademarks），在 `README.md` / `README.en.md` / `NOTICE.md` 增加**非官方声明**：
+  本项目与 Z.AI Co., Ltd 及 DeepSeek 无隶属关系，未获授权或背书；包名中的 `zcode` 仅用于描述实现来源。
+
 ### Fixed
 
 - 修正 README 中与实际测试输出不符的检查项数量。

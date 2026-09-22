@@ -1,6 +1,6 @@
 # dsh 官方开发文档符合性检查报告
 
-本报告逐项判定 `@ffyfox/dsh-project-memory` 是否符合 dsh 官方开发文档规范。
+本报告逐项判定 `dsh-zcode-project-memory` 是否符合 dsh 官方开发文档规范。
 
 ## 判定基准（唯一权威）
 
@@ -53,7 +53,7 @@ git clone --depth 1 --branch dsh-v0.1.6-alpha.2 https://github.com/deepseek-ai/d
 | R4 | `publish.md` L41 `"files": ["index.js", "cordis.patch.yml"]`（入口与 patch 必须进产物） | `package.json` L12-17：`["src", "cordis.patch.yml", "README.md", "LICENSE"]`；`src` 含入口 `src/index.js` | 符合 |
 | R5 | `publish.md` L49 入口导出 `export const name` | `src/index.js` L36 | 符合 |
 | R6 | `publish.md` L51 入口导出 `export function apply` | `src/index.js` L142 | 符合 |
-| R7 | `publish.md` L56「The patch is a YAML array … plugin rows reference the package **by name** instead of a relative source path so Node resolution finds the installed code」 | `cordis.patch.yml` L12-14：YAML 数组，`name: @ffyfox/dsh-project-memory` 与 `package.json` L2 的包名一致 | 符合 |
+| R7 | `publish.md` L56「The patch is a YAML array … plugin rows reference the package **by name** instead of a relative source path so Node resolution finds the installed code」 | `cordis.patch.yml` L12-14：YAML 数组，`name: dsh-zcode-project-memory` 与 `package.json` L2 的包名一致 | 符合 |
 | R8 | `publish.md` L163「**The author** ships a `prepare` script … that builds the published entry points from source」（仅针对 git 安装的 TS 包） | `package.json`：无 `prepare`。本包是**纯 JavaScript**（无 `lib/` 构建产物），git 安装后入口即可直接加载，不需要转译 | 不适用 |
 | R9 | `publish.md` L175-178「distribute built artifacts instead — **Publish to npm** … **Ship a tarball** from `pnpm pack`」 | 纯 JS 源码即产物；`npm pack` 产物含 7 个文件（见 `test/packaging.mjs`） | 符合 |
 

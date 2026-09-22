@@ -1,4 +1,4 @@
-# @ffyfox/dsh-project-memory
+# dsh-zcode-project-memory
 
 English | [中文](README.md)
 
@@ -13,6 +13,8 @@ One Cordis plugin that does three things:
 Memory is isolated **per project**: the directory name is derived from the sha256 of the project root's canonical absolute path. The same project hits the same memory from any process and any session; different projects cannot see each other's.
 
 The mechanism is a port of [zai-org/ZCode](https://github.com/zai-org/ZCode), and DSH-side interfaces follow the [official DeepSeek Harness documentation](https://deepseek-harness.github.io/deepseek-harness/).
+
+> **Unofficial project.** This is a community work. It is not affiliated with, authorized, sponsored, or endorsed by Z.AI Co., Ltd (the developers of ZCode) or by DeepSeek. The `zcode` in the package name describes the origin of the implementation only (see above and [`NOTICE.md`](NOTICE.md)). "ZCode" is a trademark of its respective owner, and this project uses the name solely to describe that origin.
 
 ## Install
 
@@ -185,7 +187,7 @@ They are **not** started automatically by `apply()` — the plugin's runtime beh
 | background summarization | `runMemoryAgentLoop({model, tools, executeTool, …})`, `evaluateMemoryAgentToolPolicy(input)` | Summary text + turn count + tool-call trace |
 
 ```js
-import { scanMemoryManifest, formatMemoryManifest } from '@ffyfox/dsh-project-memory/src/subsystems/manifest.js'
+import { scanMemoryManifest, formatMemoryManifest } from 'dsh-zcode-project-memory/src/subsystems/manifest.js'
 
 const manifest = await scanMemoryManifest({ rootDir: memoryRoot })
 console.log(formatMemoryManifest(manifest))
