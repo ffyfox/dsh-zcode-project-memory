@@ -29,7 +29,7 @@
  *     的文件身份一致、限制读取体积。
  *   - 路径安全：`core/src/memory/memory-file-path.ts` —— 包含性检查 + 敏感目录段拒绝。
  *
- * @module dsh-project-memory/store
+ * @module dsh-zcode-project-memory/store
  */
 
 import { createHash, randomBytes } from 'node:crypto'

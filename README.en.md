@@ -19,7 +19,7 @@ The mechanism is a port of [zai-org/ZCode](https://github.com/zai-org/ZCode), an
 ## Install
 
 ```sh
-dsh plugin --profile <your-profile> add /path/to/dsh-project-memory
+dsh plugin --profile <your-profile> add /path/to/dsh-zcode-project-memory
 ```
 
 `package.json` declares `dsh.bundle.patch`, so `dsh plugin add` adds it to the profile's bundle layer automatically.
@@ -88,7 +88,7 @@ This package is **plain JavaScript (ESM)** with no transpile or build step — t
 Reproducing from scratch:
 
 ```sh
-git clone https://github.com/ffyfox/dsh-project-memory.git && cd dsh-project-memory
+git clone https://github.com/ffyfox/dsh-zcode-project-memory.git && cd dsh-zcode-project-memory
 npm ci        # or npm install
 npm test      # exit code 0 means it passed
 ```

@@ -29,7 +29,7 @@
  *
  * 该子系统可单独启用、单独调用；它对后台总结子系统的依赖是**参数注入**而非 import。
  *
- * @module dsh-project-memory/subsystems/extraction
+ * @module dsh-zcode-project-memory/subsystems/extraction
  */
 
 /**

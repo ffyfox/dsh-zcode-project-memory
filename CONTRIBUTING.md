@@ -11,8 +11,8 @@
 | 运行时依赖 | 仅 `@deepseek-ai/schemastery` | `package.json` 的 `dependencies` |
 
 ```sh
-git clone https://github.com/ffyfox/dsh-project-memory.git
-cd dsh-project-memory
+git clone https://github.com/ffyfox/dsh-zcode-project-memory.git
+cd dsh-zcode-project-memory
 npm ci
 npm test
 ```

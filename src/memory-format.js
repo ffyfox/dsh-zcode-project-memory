@@ -10,7 +10,7 @@
  *   - 每条记忆是**自己的文件** `<slug>.md`，带 `name` / `description` / `metadata.type`
  *     frontmatter，正文按类型组织。
  *
- * @module dsh-project-memory/memory-format
+ * @module dsh-zcode-project-memory/memory-format
  */
 
 import { createHash } from 'node:crypto'

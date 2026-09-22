@@ -23,7 +23,9 @@
 
 - **包名改为 `dsh-zcode-project-memory`**：把实现来源写进名字，同时避免与非 scoped 名 `dsh-project-memory` 重名。
   `package.json` 的 `name`/`description`/`keywords`、`cordis.patch.yml` 的插件行、`package-lock.json`
-  与文档中的安装和导入示例同步更新。GitHub 仓库名保持不变。
+  与文档中的安装和导入示例同步更新。
+- **GitHub 仓库名同步改为 `dsh-zcode-project-memory`**，使仓库名与 npm 包名一致：`repository`/`bugs`/`homepage`
+  的 URL、`git clone` 与 `cd` 示例、LICENSE 的版权人署名、`src/*.js` 的 `@module` 标签全部随之更新。
 - `description` 改为说明「Unofficial community port of ZCode's project memory to DeepSeek Harness」；
   `keywords` 增加 `zcode`。
 - 依据 Apache-2.0 §6（Trademarks），在 `README.md` / `README.en.md` / `NOTICE.md` 增加**非官方声明**：
@@ -59,5 +61,5 @@
 - 发布要素：`LICENSE`（MIT）、`LICENSE-APACHE-2.0`、`NOTICE.md`、
   `NOTICE-ZCode.md`、`cordis.patch.yml`。
 
-[Unreleased]: https://github.com/ffyfox/dsh-project-memory/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/ffyfox/dsh-project-memory/releases/tag/v0.1.0
+[Unreleased]: https://github.com/ffyfox/dsh-zcode-project-memory/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ffyfox/dsh-zcode-project-memory/releases/tag/v0.1.0

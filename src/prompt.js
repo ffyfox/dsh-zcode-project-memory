@@ -19,7 +19,7 @@
  * 初始提示词只描述了「把记忆注入 system prompt」一处，且注入的是记忆正文；这与
  * ZCode 冲突，已按 ZCode 修正为上述两处。
  *
- * @module dsh-project-memory/prompt
+ * @module dsh-zcode-project-memory/prompt
  */
 
 import {

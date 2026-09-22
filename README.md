@@ -19,7 +19,7 @@ DeepSeek Harness 的项目级长效记忆插件。模型在一次会话里沉淀
 ## 安装
 
 ```sh
-dsh plugin --profile <你的 profile> add /path/to/dsh-project-memory
+dsh plugin --profile <你的 profile> add /path/to/dsh-zcode-project-memory
 ```
 
 `package.json` 声明了 `dsh.bundle.patch`，`dsh plugin add` 会自动把它加入 profile 的 bundle 层。
@@ -88,7 +88,7 @@ ls "$M"                # 每条记忆一个 .md 文件
 从零复现：
 
 ```sh
-git clone https://github.com/ffyfox/dsh-project-memory.git && cd dsh-project-memory
+git clone https://github.com/ffyfox/dsh-zcode-project-memory.git && cd dsh-zcode-project-memory
 npm ci        # 或 npm install
 npm test      # 退出码 0 即通过
 ```

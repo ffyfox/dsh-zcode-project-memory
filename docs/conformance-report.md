@@ -225,7 +225,7 @@ TEST_EXIT=0
 **插件加载复验**（dsh 真实运行）：
 
 ```
-$ dsh plugin --profile headless add /path/to/dsh-project-memory                 → EXIT=0
+$ dsh plugin --profile headless add /path/to/dsh-zcode-project-memory                 → EXIT=0
 $ dsh --profile headless --dump-config | grep -A2 "id: project-memory"          → EXIT=0，stderr 0 字节
 $ dsh --profile headless "Call save_project_memory … "                          → EXIT=0，stdout=OK，stderr 空
 $ dsh --profile headless "Quote the exact index line … "                        → EXIT=0，逐字引用索引行

@@ -36,7 +36,7 @@
  * 该子系统可单独启用、单独调用：`runMemoryAgentLoop` 的全部依赖（model、tools、
  * executeTool）都由参数注入，它不 import 另外两个子系统。
  *
- * @module dsh-project-memory/subsystems/summarization
+ * @module dsh-zcode-project-memory/subsystems/summarization
  */
 
 import { isAbsolute, resolve as resolvePath, sep } from 'node:path'

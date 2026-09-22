@@ -28,7 +28,7 @@
  *
  * 该子系统只读、无副作用、可单独调用，不依赖另外两个子系统。
  *
- * @module dsh-project-memory/subsystems/manifest
+ * @module dsh-zcode-project-memory/subsystems/manifest
  */
 
 import { basename, join, relative, sep } from 'node:path'

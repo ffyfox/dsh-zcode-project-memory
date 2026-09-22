@@ -25,12 +25,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ffyfox/dsh-project-memory.git"
+    "url": "git+https://github.com/ffyfox/dsh-zcode-project-memory.git"
   },
   "bugs": {
-    "url": "https://github.com/ffyfox/dsh-project-memory/issues"
+    "url": "https://github.com/ffyfox/dsh-zcode-project-memory/issues"
   },
-  "homepage": "https://github.com/ffyfox/dsh-project-memory#readme",
+  "homepage": "https://github.com/ffyfox/dsh-zcode-project-memory#readme",
   "publishConfig": {
     "access": "public"
   },

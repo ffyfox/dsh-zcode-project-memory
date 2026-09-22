@@ -1,5 +1,5 @@
 /**
- * `dsh-project-memory` 的宿主插件行。
+ * `dsh-zcode-project-memory` 的宿主插件行。
  *
  * 为 DSH 提供项目级的长效记忆：模型在一次会话里沉淀下的项目教训，能在之后的新会话
  * 里被自动读回。
@@ -21,7 +21,7 @@
  *     「子系统」一节对启用方式的说明）。
  *   - 记忆读取失败一律降级为「本项目还没有记忆」，绝不向上抛异常。
  *
- * @module dsh-project-memory
+ * @module dsh-zcode-project-memory
  */
 
 import Schema from '@deepseek-ai/schemastery'
