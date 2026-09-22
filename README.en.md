@@ -18,11 +18,19 @@ The mechanism is a port of [zai-org/ZCode](https://github.com/zai-org/ZCode), an
 
 ## Install
 
+From npm:
+
 ```sh
-dsh plugin --profile <your-profile> add /path/to/dsh-zcode-project-memory
+dsh plugin --profile <your-profile> add dsh-zcode-project-memory
 ```
 
-`package.json` declares `dsh.bundle.patch`, so `dsh plugin add` adds it to the profile's bundle layer automatically.
+`dsh plugin add` forwards its arguments to pnpm inside the profile directory (registry per your own pnpm config), and `package.json` declares `dsh.bundle.patch`, so the plugin joins the profile's bundle layer automatically.
+
+From source (edits take effect immediately through a pnpm symlink; the path must be absolute):
+
+```sh
+dsh plugin --profile <your-profile> add /absolute/path/to/dsh-zcode-project-memory
+```
 
 The plugin injects the `tools` and `systemPrompt` host services, both provided by `dsh-base`. Any profile inheriting `dsh-base` (web / headless / tui) activates it; a deployment missing either service leaves the plugin PENDING with no side effects.
 

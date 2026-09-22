@@ -18,11 +18,19 @@ DeepSeek Harness 的项目级长效记忆插件。模型在一次会话里沉淀
 
 ## 安装
 
+从 npm 安装：
+
 ```sh
-dsh plugin --profile <你的 profile> add /path/to/dsh-zcode-project-memory
+dsh plugin --profile <你的 profile> add dsh-zcode-project-memory
 ```
 
-`package.json` 声明了 `dsh.bundle.patch`，`dsh plugin add` 会自动把它加入 profile 的 bundle 层。
+`dsh plugin add` 把参数转发给 profile 目录下的 pnpm（registry 按你自己的 pnpm 配置）；`package.json` 声明了 `dsh.bundle.patch`，插件会自动加入 profile 的 bundle 层。
+
+从源码安装（改动即时生效，pnpm 建符号链接，须用绝对路径）：
+
+```sh
+dsh plugin --profile <你的 profile> add /绝对路径/dsh-zcode-project-memory
+```
 
 插件 `inject` 了 `tools` 与 `systemPrompt` 两个宿主服务，两者由 `dsh-base` 提供，因此 web / headless / tui 等继承 `dsh-base` 的 profile 都能生效；缺少这两个服务的部署里插件停留在 PENDING，不产生副作用。
 
