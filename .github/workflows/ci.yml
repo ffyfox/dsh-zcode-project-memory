@@ -22,10 +22,10 @@ jobs:
         node: ['20', '22']
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
           cache: npm
@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # 只做一件事：README 里指向仓库内文件的相对链接必须真实存在。
       # 不引入额外的 lint 依赖，避免为了检查而扩大依赖面。
