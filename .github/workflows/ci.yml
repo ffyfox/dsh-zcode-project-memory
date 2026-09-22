@@ -52,8 +52,11 @@ jobs:
       #
       # 围栏代码块内的内容不是链接（README 的「记忆文件形态」一节里就有示意性的
       # `](auth-token-refresh-gotcha.md)`），因此先剥掉 ``` 围栏再匹配。
+      # 必须用块标量（`|`）：脚本里含有 ": "（冒号加空格），而 YAML 的普通标量
+      # 不允许出现该组合，写成单行 run: 会让整个 workflow 文件解析失败。
       - name: Verify relative links in READMEs resolve
-        run: node -e '
+        run: |
+          node -e '
           const { readFileSync, existsSync } = require("node:fs");
           const { dirname, resolve } = require("node:path");
           const stripFences = (text) => text.replace(/^```[\s\S]*?^```$/gm, "");
@@ -62,7 +65,10 @@ jobs:
             const text = stripFences(readFileSync(readme, "utf8"));
             for (const m of text.matchAll(/\]\((?!https?:|#)([^)#]+)/g)) {
               const target = resolve(dirname(readme), m[1]);
-              if (!existsSync(target)) { console.error(`${readme}: 失效链接 ${m[1]}`); bad++; }
+              if (!existsSync(target)) {
+                console.error(readme + ": broken relative link -> " + m[1]);
+                bad++;
+              }
             }
           }
           process.exit(bad === 0 ? 0 : 1);
